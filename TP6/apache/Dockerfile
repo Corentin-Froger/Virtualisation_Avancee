@@ -1,2 +1,8 @@
-FROM httpd:latest
-COPY /index.html /var/www/html/index.html
+FROM ubuntu:latest
+RUN apt-get update 
+RUN apt install -y apache2 
+RUN apt install -y php
+RUN apt clean 
+COPY index.php /var/www/html/index.php
+EXPOSE 8000
+CMD ["apache2ctl", "-D", "FOREGROUND"]
