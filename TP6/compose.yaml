@@ -5,29 +5,28 @@ services:
     ports:
       - 80:80
 
-
-  #frontend:
-    # description du service
-  database:
-    image: mariadb:latest
-    restart: always
-    environment:
-      MARIADB_ROOT_PASSWORD: root
   adminer:
-    image: adminer
+    image: adminer:latest
+    container_name: adminer
     restart: always
     ports:
       - 8080:8080
 
-# ...autant d'autres services que necessaire
+  database:
+    image: mariadb:latest
+    container_name: database
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - volume_db:/data/db
+
 volumes:
-  volume1:
-  #config
-  volume2:
-  #config
+  volume_db:
+    name: "volume_db"
 
 networks:
   network1:
-  # config
+    # config
   network2:
-  # config
+    # config
