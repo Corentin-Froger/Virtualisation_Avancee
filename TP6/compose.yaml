@@ -1,0 +1,20 @@
+services:
+  backend:
+  # description du service
+  frontend:
+  # description du service
+  database:
+  # description du service
+
+# ...autant d'autres services que nécessaire
+volumes:
+  volume1:
+  #config
+  volume2:
+  #config
+
+networks:
+  network1:
+  # config
+  network2:
+  # config
