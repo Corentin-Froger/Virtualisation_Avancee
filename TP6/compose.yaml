@@ -1,8 +1,11 @@
 services:
-  apache:
-    image: httpd:latest
+  frontend:
+    build: 
+      context: apache/Dockerfile
     ports:
       - 80:80
+
+
   #frontend:
     # description du service
   database:
