@@ -1,12 +1,22 @@
 services:
-  backend:
-  # description du service
-  frontend:
-  # description du service
+  apache:
+    image: httpd:latest
+    ports:
+      - 80:80
+  #frontend:
+    # description du service
   database:
-  # description du service
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
-# ...autant d'autres services que nécessaire
+# ...autant d'autres services que necessaire
 volumes:
   volume1:
   #config
