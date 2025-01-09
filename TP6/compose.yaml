@@ -19,6 +19,8 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
     volumes:
       - volume_db:/data/db
 
@@ -26,8 +28,8 @@ volumes:
   volume_db:
     name: "volume_db"
 
-networks:
-  network1:
+#networks:
+ # network1:
     # config
-  network2:
+  #network2:
     # config
